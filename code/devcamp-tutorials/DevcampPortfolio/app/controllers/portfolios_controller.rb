@@ -16,7 +16,7 @@ class PortfoliosController < ApplicationController
     
     # redirect_to action: "../views/index"
    # render html: '../views/portfolios/index.html.erb'}.html_safe
-    @portfolios = Portfolio.all
+    @portfolio_item = Portfolio.find(params[:id])
   end
 
   def new 
