@@ -20,5 +20,9 @@
       <%= link_to "Login", destroy_user_session_path %>
     <% end %>
     <%= yield %>
+    <%= session[:current_user_id].inspect %> 
+    <% if session[:source] %>
+    Thanks for visiting me from <%= session[:source] %>
+    <% end %>
   </body>
 </html>
