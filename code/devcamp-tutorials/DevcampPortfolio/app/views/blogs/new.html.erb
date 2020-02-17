@@ -3,3 +3,6 @@
 <%= render 'form', blog: @blog %>
 
 <%= link_to 'Back', blogs_path %>
+
+<%= devise_error_message! %>
+<%= resource.errors.inspect %>
