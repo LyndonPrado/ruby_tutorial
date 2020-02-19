@@ -20,9 +20,6 @@
     <%= login_helper %>
 
     <%= yield %>
-    <%= session[:current_user_id].inspect %> 
-    <% if session[:source] %>
-    Thanks for visiting me from <%= session[:source] %>
-    <% end %>
+    <%= source_helper("application") %>
   </body>
 </html>
