@@ -23,7 +23,7 @@
     <% end %>
     <%= yield %>
 
-    <%= render "shared/nav" %>
+    <%= render "shared/nav", location: 'bottom' %>
 
     <%= session[:current_user_id].inspect %> 
     <% if session[:source] %>
