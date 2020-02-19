@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  #before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout "portfolio"
 	def index
 		# @portfolio_items = Portfolio.all
@@ -7,7 +8,10 @@ class PortfoliosController < ApplicationController
 	 #  @default_image = 'http://via.placeholder.com/150C/O'
    # @portfolio_items = Portfolio.where(subtitle: 'Angular');
    # @portfolio_items = Portfolio.angular
+    # byebug
+   
    @portfolio_items = Portfolio.all
+    # binding.pry
   end
 
   def angular
@@ -24,7 +28,9 @@ class PortfoliosController < ApplicationController
     
     # redirect_to action: "../views/index"
    # render html: '../views/portfolios/index.html.erb'}.html_safe
-    @portfolio_item = Portfolio.find(params[:id])
+   @portfolio_item = Portfolio.find(params[:id])
+    binding.pry
+    
   end
 
   def new 
@@ -80,6 +86,11 @@ class PortfoliosController < ApplicationController
                                         :body,
                                         :image,
                                         technologies_attributes: [:name])
+    end
+
+    def set_portfolio_item
+       byebug
+      @portfolio_item = Portfolio.find(params[:id])
     end
   end
  
