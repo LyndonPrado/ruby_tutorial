@@ -26,12 +26,11 @@
 
           <!-- <%= render "shared/nav", location: 'top'%> -->
           <%= render "shared/application_nav", location: 'top'%> 
-          <%= login_helper %>
+          <%= login_helper 'nav-link'%>
 
           <%= yield %>
           <hr>
-          <% binding.pry %>
-          <%= copyright_generator %>
+          <% render "shared/application_footer" %>
           <%= source_helper("application") %>
 
          </div>
