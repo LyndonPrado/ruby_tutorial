@@ -1,4 +1,9 @@
+
+<% if current_user %>
 <h1>Hi, <%= current_user.first_name if current_user %> </h1>
+<% else %>
+<h1>Hi, Guest</h1>
+<% end %>
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <h1>Blog Posts</h1>
