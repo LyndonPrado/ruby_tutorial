@@ -20,4 +20,8 @@ module ApplicationHelper
     	end
 	end
 
+	def copyright_generator
+		LynDevcampViewTool::Renderer.copyright 'Lyndon Prado', 'All rights reserved'
+	end
+
 end

@@ -9,4 +9,6 @@ module DefaultPageContent
 		@page_title = "Devcamp Portfolio | My Portfolio Website"
 		@seo_keywords = "test portfolio"
 	end 
+
+	
 end
