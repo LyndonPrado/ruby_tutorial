@@ -29,7 +29,7 @@ class PortfoliosController < ApplicationController
     # redirect_to action: "../views/index"
    # render html: '../views/portfolios/index.html.erb'}.html_safe
    @portfolio_item = Portfolio.find(params[:id])
-    binding.pry
+    # binding.pry
     
   end
 
