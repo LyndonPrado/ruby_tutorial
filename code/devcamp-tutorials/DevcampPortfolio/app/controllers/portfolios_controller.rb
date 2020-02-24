@@ -10,7 +10,9 @@ class PortfoliosController < ApplicationController
    # @portfolio_items = Portfolio.angular
     # byebug
    
-   @portfolio_items = Portfolio.all
+   # @portfolio_items = Portfolio.all
+   # @portfolio_items = Portfolio.order("position ASC")
+   @portfolio_items = Portfolio.by_position
     # binding.pry
   end
 
