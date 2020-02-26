@@ -1,4 +1,4 @@
-// alert("hi there")
+ alert("hello from sortable.js")
 ;(function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     define([], factory);
