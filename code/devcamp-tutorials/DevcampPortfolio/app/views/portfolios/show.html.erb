@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class ="col-md-7">
 			<% if @portfolio_item %>
-			<%= image_tag(@portfolio_item.main_image.url) %>
+			<%= image_tag  portfolio_img(@portfolio_item.main_image.url, 'main') %>
 			<% end %>
 		</div>
 		<div class ="col-md-5">
