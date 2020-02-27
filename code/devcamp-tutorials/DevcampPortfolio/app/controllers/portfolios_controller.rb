@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
+  # before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
+   before_action :edit_portfolio_path, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 	def index
@@ -38,9 +39,7 @@ class PortfoliosController < ApplicationController
     
     # redirect_to action: "../views/index"
    # render html: '../views/portfolios/index.html.erb'}.html_safe
-   @portfolio_item = Portfolio.find(params[:id])
-    # binding.pry
-    
+   @portfolio_item = Portfolio.find(params[:id])   
   end
 
   def new 
@@ -54,8 +53,9 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title,:subtitle, :body, technologies_attributes: [:name]))
-
+    byebug
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title,:subtitle, :body, :main_image, :thumb_image,  technologies_attributes: [:name]))
+    byebug
     respond_to do |format|
       if @portfolio_item.save
         format.html { redirect_to portfolios_path, notice: 'Your portfolio item is now live.' }
@@ -90,18 +90,25 @@ class PortfoliosController < ApplicationController
 
     private
 
+    
+
     def portfolio_params 
       params.require(:portfolio).permit(:title, 
                                         :subtitle, 
                                         :body,
                                         :image,
+                                        :main_image,
+                                        :thumb_image,
                                         technologies_attributes: [:name])
     end
 
     def set_portfolio_item
-       byebug
       @portfolio_item = Portfolio.find(params[:id])
     end
+
+    
+
+
   end
  
 
