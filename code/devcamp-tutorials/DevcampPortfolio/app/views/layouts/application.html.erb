@@ -29,8 +29,8 @@
               poster: 'home_bg.png'
             )
             %>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+   <!--        <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p> -->
 
           <!-- <%= render "shared/nav", location: 'top'%> -->
           <%= render "shared/application_nav", location: 'top'%> 
@@ -39,6 +39,7 @@
           <%= yield %>
           <hr>
           <%= render "shared/application_footer" %>
+          <%= render "shared/alerts" %>
           <%= source_helper("application") %>
 
          </div>

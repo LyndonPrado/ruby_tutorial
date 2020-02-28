@@ -3,7 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 // alert("hello from application.js")
-alert("testing")
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
@@ -29,6 +28,7 @@ require("../../javascript/custom/index.js")
 //= require ../../javascript/html.sortable
 //= require cocoon
 import "cocoon";
+//= require gritter
 //= require turbolinks
 //= require_tree .
 //= require_tree ../../javascript/

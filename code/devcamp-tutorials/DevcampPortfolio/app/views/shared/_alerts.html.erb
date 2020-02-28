@@ -1,0 +1,11 @@
+<% if flash[:alert] %>
+    <% binding.pry %>
+	<%= js add_gritter(flash[:alert],title: "Lyndon's Portfolio" ,sticky: false, :on_click => remove_gritter, :time => 100000, class_name: 'alert') %>
+<% elsif flash[:error] %>
+	<% binding.pry %>
+	<%= js add_gritter(flash[:alert],title: "Lyndon's Portfolio" , sticky: false, :on_click => remove_gritter, :time => 100000, class_name: 'alert') %>
+<% else %>
+    <% binding.pry %>
+	<%= js add_gritter(flash[:notice],title: "Lyndon's Portfolio", sticky: false, :on_click => remove_gritter, :time => 100000, class_name: 'alert') %>
+	<%= js add_gritter("Testing gritter") %>
+<% end %>
