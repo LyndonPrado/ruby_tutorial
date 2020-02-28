@@ -68,7 +68,7 @@ class PortfoliosController < ApplicationController
   def update
     @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
-      if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body))
+      if @portfolio_item.update(params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name]))
         format.html {redirect_to portfolios_path, notice: "The record successfully updated."}
       else
         format.html { render :edit}
@@ -99,7 +99,7 @@ class PortfoliosController < ApplicationController
                                         :image,
                                         :main_image,
                                         :thumb_image,
-                                        technologies_attributes: [:name])
+                                        technologies_attributes: [:id,:name,:_destroy])
     end
 
     def set_portfolio_item

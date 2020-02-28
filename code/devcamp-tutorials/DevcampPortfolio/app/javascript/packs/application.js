@@ -27,6 +27,8 @@ require("../../javascript/custom/index.js")
 //= require jqeury_ujs
 //= require jquery-ui
 //= require ../../javascript/html.sortable
+//= require cocoon
+import "cocoon";
 //= require turbolinks
 //= require_tree .
 //= require_tree ../../javascript/
