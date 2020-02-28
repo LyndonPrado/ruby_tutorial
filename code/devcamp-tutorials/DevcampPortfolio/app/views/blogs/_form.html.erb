@@ -65,7 +65,7 @@
 
             <ul>
               <% blog.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+                <li><%= alert_generator message %></li>
               <% end %>
             </ul>
           </div>
