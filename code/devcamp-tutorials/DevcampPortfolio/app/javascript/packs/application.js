@@ -29,6 +29,7 @@ require("../../javascript/custom/index.js")
 //= require cocoon
 import "cocoon";
 //= require gritter
+//= require cable
 //= require turbolinks
 //= require_tree .
 //= require_tree ../../javascript/
