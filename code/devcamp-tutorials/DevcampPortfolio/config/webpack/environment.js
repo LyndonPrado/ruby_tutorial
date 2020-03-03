@@ -1,4 +1,5 @@
 const { environment } = require('@rails/webpacker')
+const coffee =  require('./loaders/coffee')
 
 const babelLoader = environment.loaders.get('babel')
 babelLoader.test = /\.(coffee|js)(\.erb)?$/
@@ -21,5 +22,8 @@ const aliasConfig = {
 
 environment.config.set('resolve.alias', aliasConfig);
 
+environment.loaders.prepend('coffee', coffee)
+environment.loaders.append('coffee',coffee)
 module.exports = babelLoader
+environment.loaders.prepend('coffee', coffee)
 module.exports = environment

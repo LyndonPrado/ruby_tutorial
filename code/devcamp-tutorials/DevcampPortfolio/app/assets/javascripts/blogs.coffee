@@ -1,4 +1,4 @@
-alert("test_app_blogs_coffee") -> 
+alert("test_assets_blogs_coffee") -> 
 jQuery(document).on 'turbolink:load', ->
   comments = $('#comments')
   if comments.length > 0
