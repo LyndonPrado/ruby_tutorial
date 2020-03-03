@@ -1,0 +1,19 @@
+class TopicsController < ApplicationController
+  layout 'blog'
+  def index
+  	@topics = Topic.all
+  end
+
+  def show
+  	@topic = Topic.find(params[:id])
+  	
+
+  	if logged_in?(:site_admin)
+    # byebug
+    # @blogs = Blog.special_blogs
+      @blogs = @topic.blogs.order("created_at").page(params[:page]).per(5)
+     else
+      @blogs = @topic.blogs.published.order("created_at").page(params[:page]).per(5)
+    end
+  end
+end
