@@ -5,9 +5,13 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
+    if logged_in?(:site_admin)
     # byebug
     # @blogs = Blog.special_blogs
-       @blogs = Blog.page(params[:page]).per(5)
+      @blogs = Blog.order("created_at").page(params[:page]).per(5)
+     else
+      @blogs = Blog.published.order("created_at").page(params[:page]).per(5)
+    end
     # puts "*" * 500
     # puts @blogs.inspect
     # puts "*" * 500
